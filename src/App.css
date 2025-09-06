@@ -1,0 +1,173 @@
+/* .card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  margin: -150px;
+  float: left;
+  perspective: 500px;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .content {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  line-height: 300px;
+  color: #03446a;
+  text-align: center;
+  font-size: 60px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.back {
+  background: #03446a;
+  color: white;
+  transform: rotateY(180deg);
+} */
+
+/* Flip effect for Chat window (click to flip, reversed direction) */
+.chat-card {
+  perspective: 1200px;
+}
+
+.chat-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.chat-card .face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+}
+
+/* Make the current UI the back face */
+.chat-card .back {
+  transform: rotateY(180deg);
+}
+
+/* Flip the other way (negative angle) */
+.chat-card.is-flipped .chat-inner {
+  transform: rotateY(-180deg);
+}
+
+/* Animated scrolling text for the button */
+.wrapper {
+  min-height: 3rem;
+  min-width: 20rem;
+  font-size: 2rem;
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+  font-family: monospace;
+}
+
+.letter {
+  width: 1ch;
+  position: absolute;
+  top: 50%;
+  transform: translate(0px, -50%);
+  left: 100%;
+  animation: scroll 3.5s linear infinite;
+}
+
+@keyframes scroll {
+  to {
+    left: -1ch;
+  }
+}
+.letter1 {
+  animation-delay: calc(3.5s / 24 * (24 - 1) * -1);
+}
+.letter2 {
+  animation-delay: calc(3.5s / 24 * (24 - 2) * -1);
+}
+.letter3 {
+  animation-delay: calc(3.5s / 24 * (24 - 3) * -1);
+}
+.letter4 {
+  animation-delay: calc(3.5s / 24 * (24 - 4) * -1);
+}
+.letter5 {
+  animation-delay: calc(3.5s / 24 * (24 - 5) * -1);
+}
+.letter6 {
+  animation-delay: calc(3.5s / 24 * (24 - 6) * -1);
+}
+.letter7 {
+  animation-delay: calc(3.5s / 24 * (24 - 7) * -1);
+}
+.letter8 {
+  animation-delay: calc(3.5s / 24 * (24 - 8) * -1);
+}
+.letter9 {
+  animation-delay: calc(3.5s / 24 * (24 - 9) * -1);
+}
+.letter10 {
+  animation-delay: calc(3.5s / 24 * (24 - 10) * -1);
+}
+.letter11 {
+  animation-delay: calc(3.5s / 24 * (24 - 11) * -1);
+}
+.letter12 {
+  animation-delay: calc(3.5s / 24 * (24 - 12) * -1);
+}
+.letter13 {
+  animation-delay: calc(3.5s / 24 * (24 - 13) * -1);
+}
+.letter14 {
+  animation-delay: calc(3.5s / 24 * (24 - 14) * -1);
+}
+.letter15 {
+  animation-delay: calc(3.5s / 24 * (24 - 15) * -1);
+}
+.letter16 {
+  animation-delay: calc(3.5s / 24 * (24 - 16) * -1);
+}
+.letter17 {
+  animation-delay: calc(3.5s / 24 * (24 - 17) * -1);
+}
+.letter18 {
+  animation-delay: calc(3.5s / 24 * (24 - 18) * -1);
+}
+.letter19 {
+  animation-delay: calc(3.5s / 24 * (24 - 19) * -1);
+}
+.letter20 {
+  animation-delay: calc(3.5s / 24 * (24 - 20) * -1);
+}
+.letter21 {
+  animation-delay: calc(3.5s / 24 * (24 - 21) * -1);
+}
+.letter22 {
+  animation-delay: calc(3.5s / 24 * (24 - 22) * -1);
+}
+.letter23 {
+  animation-delay: calc(3.5s / 24 * (24 - 23) * -1);
+}
+.letter24 {
+  animation-delay: calc(3.5s / 24 * (24 - 24) * -1);
+}
