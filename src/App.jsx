@@ -5,7 +5,12 @@ import tinaAvatar from "./assets/tinaAvatar.png";
 
 function App() {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [messages, setMessages] = useState([{ role: "model", text: "Great to meet you. What would you like to know?" }]);
+  const [messages, setMessages] = useState([
+    {
+      role: "model",
+      text: "I’m Tina.  I help you to choose right insurance policy.  May I ask you a few personal questions to make sure I recommend the best policy for you?",
+    },
+  ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -57,20 +62,16 @@ function App() {
             </div>
 
             {/* Back face: the current chat UI */}
-            <div className="face back w-full h-full bg-white/20 backdrop-blur-md rounded-[32px] shadow-[0px_30px_100px_0px_rgba(137,188,255,0.30)] overflow-hidden relative flex flex-col ">
+            <div className="face back w-full h-full bg-white/30 backdrop-blur-md rounded-2xl shadow-[0px_30px_100px_0px_rgba(137,188,255,0.30)] overflow-hidden relative flex flex-col ">
               {/**/}
               {/* Mapped Chat messages */}
-              <div ref={scrollRef} className="flex-1 overflow-y-auto overflow-x-hidden py-6 pl-10 pr-20 space-y-4" style={{ paddingBottom: "150px" }}>
+              <div ref={scrollRef} className="flex-1 overflow-y-auto overflow-x-hidden py-6 pl-10 pr-20 space-y-2" style={{ paddingBottom: "150px" }}>
                 {messages.map((m, i) => (
                   <div key={i} className={`px-2 py-1 flex w-full items-start gap-2 ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                     {m.role === "user" ? (
                       // User message aligned right
                       <>
-                        {/* <div className="w-20 h-20 relative shrink-0 order-1">
-                          <img className="w-20 h-20 left-0 top-0 absolute rounded-full object-cover" src="https://placehold.co/80x80" alt="You" />
-                          <div className="w-5 h-6 left-[74px] top-[28px] absolute bg-fuchsia-500" />
-                        </div> */}
-                        <div className="px-6 py-4 bg-white/70 rounded-2xl inline-flex flex-col justify-start items-center gap-2.5 overflow-hidden order-2">
+                        <div className="px-6 py-3 bg-white/70 rounded-lg inline-flex flex-col justify-start items-center gap-2.5 overflow-hidden order-2">
                           <div className="w-fit max-w-[60ch] flex justify-end text-[#bc1944] text-lg font-medium font-['Nunito'] leading-relaxed tracking-tight whitespace-pre-wrap break-words">
                             {m.text}
                           </div>
@@ -89,7 +90,7 @@ function App() {
                             />
                           </svg>
                         </div>
-                        <div className="px-6 py-4 bg-[#0076bc] rounded-2xl inline-flex flex-col justify-start items-center gap-2.5 overflow-hidden">
+                        <div className="px-6 py-3 bg-[#0076bc] rounded-lg inline-flex flex-col justify-start items-center gap-2.5 overflow-hidden">
                           <div className="w-fit max-w-[70ch] justify-start text-white text-lg font-medium font-['Nunito'] leading-relaxed tracking-tight whitespace-pre-wrap break-words">
                             {m.text}
                           </div>
@@ -101,24 +102,10 @@ function App() {
                 {loading && <div className="text-sm text-slate-600 animate-pulse">Thinking...</div>}
                 {error && <div className="text-sm text-red-600">{error}</div>}
               </div>
-              {/* <div className="flex-1 overflow-y-auto py-6 px-20 space-y-4">
-                {messages.map((m, i) => (
-                  <div
-                    key={i}
-                    className={`${
-                      m.role === "user" ? "bg-blue-500/70 text-white ml-auto" : "bg-white/70 text-stone-900"
-                    } max-w-[70%] px-4 py-2 rounded-2xl whitespace-pre-wrap backdrop-blur-sm`}
-                  >
-                    {m.text}
-                  </div>
-                ))}
-                {loading && <div className="text-sm text-slate-600 animate-pulse">Thinking...</div>}
-                {error && <div className="text-sm text-red-600">{error}</div>}
-              </div> */}
 
               <form
                 onSubmit={sendMessage}
-                className="w-[668px] p-2.5 left-[102px] top-[720.91px] absolute bg-white rounded-lg outline-1 outline-offset-[-1px] outline-stone-950/30 inline-flex justify-between items-center"
+                className="w-[668px] p-2.5 left-[102px] top-[720.91px] absolute bg-white/90 rounded-lg outline-1 outline-offset-[-1px] outline-stone-950/30 inline-flex justify-between items-center"
               >
                 <input
                   value={input}
